@@ -492,7 +492,7 @@ useEffect(() => {
                             onChange={(e) =>
                               setContact({ ...contact, state: e.target.value })
                             }
-                            className=" p-3 text-[13px] text-[#0f2d5e]  outline-none"
+                            className=" p-3  rounded-none bg-white appearance-none text-[13px] text-[#0f2d5e]  outline-none"
                           >
                             <option value="">State*</option>
 
@@ -1195,7 +1195,7 @@ useEffect(() => {
                             onChange={(e) =>
                               setContact({ ...contact, state: e.target.value })
                             }
-                            className=" p-3 text-[13px] text-[#0f2d5e]  outline-none"
+                            className=" p-3 rounded-none bg-white appearance-none text-[13px] text-[#0f2d5e]  outline-none"
                           >
                             <option value="">State*</option>
 
