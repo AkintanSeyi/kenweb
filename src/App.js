@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route, Navigate , useLocation } from "react-router-dom";
+import Home from "./Component/Body/Home";
+import Header from "./Component/Header/Header";
+import Fightinhand from "./Component/Body/Fightinhand";
+import Meetkenpaxton from "./Component/Body/Meetkenpaxton";
+import Join from "./Component/Body/Join";
+import Donate from "./Component/Body/Donate";
 
-function App() {
+
+const Layout = () => {
+  const location = useLocation();
+
+  const hideHeader =
+    location.pathname ===
+    "/winred/ken-paxton-for-senate/donate-today/653898598083884832845";
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {!hideHeader && <Header />}
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/issues" element={<Fightinhand />} />
+        <Route path="/about" element={<Meetkenpaxton />} />
+        <Route path="/paxton-s-patriots" element={<Join />} />
+        <Route
+          path="/winred/ken-paxton-for-senate/donate-today/653898598083884832845"
+          element={<Donate />}
+        />
+      </Routes>
+    </>
   );
-}
+};
+
+
+const App = () => {
+  return (
+    <BrowserRouter>
+     
+       <Layout />
+    
+    </BrowserRouter>
+  );
+};
 
 export default App;
