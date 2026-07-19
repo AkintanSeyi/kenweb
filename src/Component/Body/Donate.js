@@ -492,7 +492,7 @@ useEffect(() => {
                             onChange={(e) =>
                               setContact({ ...contact, state: e.target.value })
                             }
-                            className="border-b p-3 text-[13px] text-[#0f2d5e]  outline-none"
+                            className=" p-3 text-[13px] text-[#0f2d5e]  outline-none"
                           >
                             <option value="">State*</option>
 
@@ -848,7 +848,20 @@ useEffect(() => {
   {/* Mobile */}
  <div className="block md:hidden bg-white">
 
-  {/* Header Image */}
+ {processing && (
+  <div className="fixed inset-0 bg-white z-[9999] flex flex-col items-center justify-center">
+    <div className="w-12 h-12 border-4 border-gray-300 border-t-[#e31d2b] rounded-full animate-spin"></div>
+
+    <p className="mt-5 text-[#0f2d5e] font-bold text-lg">
+      Processing...
+    </p>
+
+    <p className="mt-1 text-sm text-gray-500 text-center px-6">
+      Please wait while we process your donation.
+    </p>
+  </div>
+)}
+<section  className="relative min-h-screen">
   <img
     src="https://res.cloudinary.com/dvuq6vmiy/image/upload/v1783949432/339813784_152047611130134_2730394229275614479_n-e1711469371805-80bde372-00843c79-1920w_ycs2go.webp"
     alt=""
@@ -874,7 +887,7 @@ useEffect(() => {
                   SUPPORT KEN PAXTON FOR SENATE
                 </div>
 
-                <div className="mt-5 h-[1650px]">
+                <div className="mt-5 ">
                   <div className="mt-3 text-[#111]">
                     <h2 className="text-[22px] leading-7 font-normal">
                       Radical James Talarico Raised Nearly $11 Million in ONE
@@ -1182,7 +1195,7 @@ useEffect(() => {
                             onChange={(e) =>
                               setContact({ ...contact, state: e.target.value })
                             }
-                            className="border-b p-3 text-[13px] text-[#0f2d5e]  outline-none"
+                            className=" p-3 text-[13px] text-[#0f2d5e]  outline-none"
                           >
                             <option value="">State*</option>
 
@@ -1532,7 +1545,10 @@ useEffect(() => {
     </div>
   </div>
 
+</section>
 </div>
+
+
 </>
 
 
@@ -1748,6 +1764,7 @@ useEffect(() => {
           </div>
         </div>
       </section>
+      
     </div>
   );
 };
